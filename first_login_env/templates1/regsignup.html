@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>regsignup</title>
+</head> <div style="text-align:center">
+<body style="color:rgb(141, 71, 255);">Reg Sign up 
+
+  <form method="POST" action="/regsignup" >
+    {% csrf_token %}
+    <form class="row g-3">
+      <div class="col-md-6">
+          <label for="inputfirstname" class="form-label">First Name</label>
+          <input type="text"  name="fname" placeholder="Enter your First name" required>
+          <div>
+        <div class="col-md-6">
+          <label for="inputlastname" class="form-label">Last Name</label>
+          <input type="text"  name="lname" placeholder="Enter your Last name" required>
+        </div>
+        <div class="col-12">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email"  name="email" placeholder="Enter your Email Address " required>
+        </div>
+      
+        <div class="col-md-6">
+          <label for="inputusername" class="form-label">User name</label>
+          <input type="text"  name="username" placeholder="Enter your  Username" required>
+          <div>
+      
+        <div class="col-md-6">
+          <label for="" class="form-label">Password</label>
+          <input type="password" name="password1" placeholder="create a your password" required>
+        </div>
+        <div class="col-md-6">
+          <label for="" class="form-label">Confirm Password</label>
+          <input type="password" name="password2" placeholder="create a your Confirm password" required>
+        </div>
+        
+      <div class="col-12">
+        <label for="inputAddress1" class="form-label">Address 1</label>
+        <input type="text" class="form-control" name="address1"  placeholder="1234 Main St">
+      </div>
+      <div class="col-12">
+        <label for="inputAddress2" class="form-label">Address 2</label>
+        <input type="text" class="form-control" name="address2"  placeholder="Apartment, studio, or floor">
+      </div>
+      <div class="col-md-6">
+        <label for="inputCity" class="form-label">City</label>
+        <input type="text" class="form-control" name="city"  placeholder="Enter city name">
+      </div>
+  
+      <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip</label>
+        <input type="text" class="form-control" name="zip" id="inputZip" placeholder="Enter Zip name">
+      </div>
+      <div class="mb-3">
+          <label for="formFileMultiple" class="form-label">Multiple files input example</label>
+          <input class="form-control" type="file" name="mfileupload" id="formFileMultiple" multiple>
+        </div>
+      <!--div class="col-12">
+          <label class="form-check-label" for="gridCheck"></label>
+          <input class="form-check-input" type="checkbox" name="grid">
+            Check me out
+      </div-->
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </div>
+    </form>
+  <form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<h2 class="display-8">EMP Register</h2>
+<form action="/empform/" method="post" autocomplete="off">
+    {%csrf_token%}
+    {{form.fullname|as_crispy_field}}
+    {{form.mobile|as_crispy_field}}
+    <div class="row">
+        <div class="col-md-4">
+            {{form.empcode|as_crispy_field}}
+        </div>
+        <div class="col-md-6">
+            {{form.position|as_crispy_field}}
+        </div>
+    </div>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto;
+            gap: 50px;
+        }
+    </style>
+    <div class="row">
+        <div class="col-md-5">
+            <button type="submit" style='font-size:15px;color:rgb(0, 255, 0) '
+                class="btn btn-secondary btn-block btn-lg"><i class="fa fa-floppy-o"></i> Save</button>
+        </div>
+        <div class="col-md-5">
+            <a href="{% url 'emplist' %}" style='font-size:15px;color:rgba(255, 0, 0, 0.925) '
+                class="btn btn-secondary btn-block btn-lg">
+                <i class="fa fa-backward"></i>Back</a>
+        </div>
+    </div>
+
+</form>
+{% endblock content %}

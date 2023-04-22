@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup</title>
+</head>
+<body style="color:rgb(141, 71, 255);">Sign up 
+
+<form action="/signin" method="post">
+    {% csrf_token %}
+    <label for="">Username</label>
+    <input type="text" id="username" name="username" placeholder="create a usaername (only letters and numbers)" required>
+    <br>
+
+    <label for="">password</label>
+    <input type="password" id="pass1" name="pass1" placeholder="Enter your password" >
+    <br>
+
+    <button type="submit">signin</button>
+    
+    {% for message in messages  %}
+    <strong>message:</strong> {{message}}
+    <button type="button" class="close" data-dismiss = "alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {% endfor %}
+</form>
+
+</body>
+</html>

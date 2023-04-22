@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authentication</title>
+</head>
+<body>
+    {% for message in messages  %}
+    <strong>message:</strong> {{message}}
+    <button type="button" class="close" data-dismiss = "alert" aria-label="close">
+    <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    {% endfor %}
+    <h1 style="color:rgb(71, 255, 141);" > wellcome to students Registration application</h1>
+
+    {% if user.is_authenticated %}
+    <h3>Hello {{ fname }}</h3>
+    <h4> sucessfully login </h4>
+    <button type="submit"> <a href="/studentmarks"> studentmarks</a></button>
+    {% else %}
+    <h3>Click on Registration form link if we have a new student</h3>
+    <button type="submit"> <a href="signup"> Registration form</style></a></button>
+    <!--button type="submit"> <a href="signin"> Signin</a></button-->
+   {% endif%}
+
+<head >
+<style> table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }
+    </style>
+</head >
+   <h1>New Students signup data </h1> <form> 
+    <input type="search" placeholder="Search..."> <button type="submit">Search</button>
+  </form>
+{% if cred %}
+ 
+ 
+ <table style="width:100%">
+     <tr>
+    <thead >
+        <tr><th style="width:0%">ID</th>  <th style="width:4%">username</th>  <th style="width:4%">fname</th> <th style="width:4%">lname</th> <th style="width:4%">email</th>  <th style="width:4%">pass1</th> <th style="width:4%">signin</th></tr>
+        </thead>
+        </tr>
+        {% for st in cred %}
+ <tr style="height:30px">
+     
+     <td>{{st.id}}</td>
+     <td>{{st.username}}</td>
+     <td>{{st.fname}}</td>
+     <td>{{st.lname}}</td>
+     <td>{{st.email}}</td>
+     <td>{{st.pass1}}</td>
+     <td><button type="submit"> <a href="signin">click on Signin</a></button></td>
+ </tr>
+     {% endfor %}
+    
+</table>
+
+{% else %}
+ <h1>No Data</h1>
+{% endif %}
+</head>
+</body>
+</html>

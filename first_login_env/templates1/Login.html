@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head> <div style="text-align:center"> 
+<body style="color:rgb(141, 71, 255);">Login 
+    <form method="POST" action="/Login" >
+        {% csrf_token %}
+
+        <div class="col-md-6">
+            <label for="inputusername" class="form-label">User name</label>
+            <input type="text"  name="username" placeholder="Enter your  Username" required>
+            <div>
+        <div class="col-md-6">
+            <label for="" class="form-label">Password</label>
+            <input type="password"  name="password" placeholder="Enter your  correct password" required>
+            <div>
+       
+             
+            <button type="submit">Login</button>
+        </div>
+    
+    </form>
+    <div>
+            {% for message in messages %}
+            <h3>  {{message}} </h3>
+            {% endfor %}
+
+    </div>
+</div>
+</body>
+</html>
